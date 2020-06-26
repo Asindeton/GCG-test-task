@@ -27,12 +27,12 @@
     <div class="form__wrapper">
       <div class="form">
         <span class="form__header">ФОРМА С КНОПКОЙ</span>
-        <form action="" class="form__send-email">
+        <form action="" class="form__send-email" onsubmit='alert(`Ожидайте звонка по номеру ${tel.value}`)'>
           <label for="tel" class="form__send-email__label">
             <span>ОСТАВЬ ТЕЛЕФОН И ПОЛУЧИ</span>
             <span>ЧТО-ТО ОФИГЕННОЕ</span>
           </label>
-          <input type="tel" class="form__send-email__input" pattern="[0-9]{12}" placeholder="Введите номер" id="tel"> 
+          <input type="tel" class="form__send-email__input" pattern="[0-9]{12}" placeholder="Введите номер" id="tel" required> 
           <img src="./assets/hand-96302_640@1X.png" alt="" class="form__send-email__img-hand">
           <button class="form__send-email__button">ПОЛУЧИТЬ</button>
         </form>
@@ -50,10 +50,14 @@
         </div>
         <div class="slider__control">
           <div class="slider__control__element">
-            <div class="active"></div>
+            <div [n-elem] = 0 class="control__element active"></div>
           </div>
-          <div class="slider__control__element"></div>
-          <div class="slider__control__element"></div>
+          <div class="slider__control__element">
+            <div [n-elem] = 1 class="control__element"></div>
+          </div>
+          <div class="slider__control__element">
+            <div [n-elem] = 2 class="control__element"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -63,6 +67,90 @@
         <div class="text-block__content__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere quis arcu sit amet commodo. Nullam ac dui lacus. Nulla dapibus interdum interdum. Curabitur ut diam nisl. Vivamus libero lacus, viverra at dolor sit amet, commodo faucibus orci. Vivamus laoreet ornare nisi, id pharetra tellus ullamcorper volutpat. Sed lacinia placerat accumsan. Praesent pharetra ipsum scelerisque, sodales urna ut, placerat nulla. Duis nunc urna, semper non arcu ut, sagittis dapibus lorem. Nunc nec urna id velit sodales sodales. Sed porttitor quam eget mollis consequat. Curabitur aliquet nec dui eget aliquet. Nulla in risus ante.</div>
       </div>
     </div>
+    <div class="calc-block__wrapper"> 
+      <div class="calc-block__content">
+        <div class="calc-block__type">
+          <div class="calc-block__type__title">
+            <span>КАЛЬКУЛЯТОР</span>
+            <span>(СТОИМОСТЬ ПОЛЬЗОВАТЕЛЬ УЗНАЕТ ПО ТЕЛЕФОНУ)</span>
+          </div>
+          <div class="calc-block__type__content">
+            <div class="calc-block__type__content__window">
+              <img src="./assets/window/1@1X.png" alt="" >
+              <span [e-calc-number] = 1  class="active_window" >Одностворчатое</span>
+            </div>
+            <div class="calc-block__type__content__window">
+              <img src="./assets/window/2@1X.png" alt="">
+              <span [e-calc-number] = 2>Двухстворчатое</span>
+            </div>
+            <div class="calc-block__type__content__window">
+              <img src="./assets/window/3@1X.png" alt="">
+              <span [e-calc-number] = 3>Трёхстворчатое</span>
+            </div>
+            <div class="calc-block__type__content__window">
+              <img src="./assets/window/4@1X.png" alt="">
+              <span [e-calc-number] = 4>Балконный блок</span>
+            </div>
+            <div class="calc-block__type__content__window">
+              <img src="./assets/window/5@1X.png" alt="">
+              <span [e-calc-number] = 5>Остекление балкона</span>
+            </div>
+          </div>
+        </div>
+        <div class="calc-block__calc"> 
+          <div class="calc-block__calc__data">
+            <div class="calc-block__calc__data__size">
+              <div class="calc-block__calc__data__size__width">ширина</div>
+              <div class="calc-block__calc__data__size__height">высота</div>
+              <div class="calc-block__calc__data__size__preview"><img src="./assets/window/1@1X.png" alt=""></div>
+              <div class='calc-block__calc__data__size__inputs'>
+                <label for="">
+                  <div>ширина, см</div>
+                  <input type="number" name="" id="" value="120">
+                </label>
+                <label for="">
+                  <div>высота, см</div>
+                  <input type="number" name="" id="" value="120">
+                </label>
+              </div>
+              <div class="calc-block__calc__data__size__X"><img src="./assets/х@1X.png" alt=""></div>
+            </div>
+            <div class="calc-block__calc__data__param">
+              <div class="calc-block__calc__data__param__title">Одностворчатое окно КBE</div>
+              <div class="calc-block__calc__data__param__first">
+                <span class="param-title">1.Критерий выбора</span> 
+                <div class="calc-block__calc__data__param__first__radio">
+                  <label><input type="radio" name="calc-param" id="" value="1" checked>пункт выбора 1</label>
+                  <label><input type="radio" name="calc-param" id="" value="2">пункт выбора 2</label>
+                  <label><input type="radio" name="calc-param" id="" value="3">пункт выбора 3</label>
+                </div>
+              </div>
+              <div class="calc-block__calc__data__param__second__select">
+                <span class="param-title">2.Выберите открывание створки</span>
+                <select size="1" name="" >
+                  <option value="does_not_open">Не открывается</option>
+                  <option value="opens">Открывается</option>
+                </select>
+              </div>
+              <div class="calc-block__calc__data__param__button">
+                <form action="">
+                  <label for="tel2" class="calc-block__calc__data__param__button-tel">
+                    <div><img src="./assets/user@1X.png" alt=""></div>
+                    <input type="tel" class="" pattern="[0-9]{12}" placeholder="Введите номер" id="tel2" required>
+                  </label>
+                  <button class="calc-block__calc__data__param__button__button">РАССЧИТАТЬ</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
+  <footer>
+    <div>просто <br>
+    скромный футер</div>
+  </footer>
+  <script  src="./script.js"></script>
 </body>
 </html>

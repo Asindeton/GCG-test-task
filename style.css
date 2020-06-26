@@ -1,13 +1,21 @@
+@import './fonts.css';
+
+body{
+    font-family: sans-serif;
+    
+}
+
 header{
     background-color: #dcdcdc;
     width: 100%;
     height: 230px;
 }   
 h1{
-    font-size: 35px;
+    font-size: 30px;
     margin-top: 7px;
     line-height: 25px;
     margin-bottom: 15px;
+    font-weight: bold;
 }
 .header__wrapper{
     max-width: 1000px;
@@ -21,6 +29,13 @@ h1{
 
 .header__company-name{
     display: flex;
+}
+.header__company-name__words{
+    color: #767676;
+}
+
+.header__company-name__words>span{
+    font-size: 15px;
 }
 
 .header__company-name__logo{
@@ -38,7 +53,8 @@ h1{
 .header__company-phons>a{
     text-decoration: none;
     color: #767676;
-    font-size: 44px;
+    font-size: 40px;
+    line-height: 47px;
 }
 .form__wrapper{
     width: 100%;
@@ -51,17 +67,15 @@ h1{
     margin-left: 568px;
     margin-top: 70px;
     display: inline-block;
+    font-family: "MyriadProRegular";
 }
 .form__header{
     margin-left: 65px;
     font-size: 25px;
     color: #9da3d7;
+    font-family: "MyriadProSemiBold";
 }
 .form__send-email{
-/*     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
     position: relative;
     width: 358px;
     height: 275px;
@@ -76,8 +90,9 @@ h1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    line-height: 30px;
-    font-size: 23px;
+    line-height: 29px;
+    font-size: 25px;
+
 }
 
 .form__send-email__input{
@@ -101,7 +116,7 @@ h1{
     height: 50px;
     background-color: #ffc087;
     border: none;
-    font-size: 24px;
+    font-size: 22px;
     cursor: pointer;
 }
 
@@ -127,17 +142,23 @@ h1{
     margin-top: 35px;
     font-size: 25px;
     color: #9da3d7;
+    font-family: "MyriadProSemiBold";
 }
 .slider__slides{
+    display: flex;
     overflow: hidden;
     width: 695px;
     height: 290px;
     margin-left: 17px;
     margin-top: 22px;
     border: 7px solid #ffffff;
+
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
     -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+}
+.slider__slides>div{
+    transition: transform 0.6s ease;
 }
 .slider__control{
     display: flex;
@@ -158,7 +179,10 @@ h1{
     border-radius: 50%;
 }
 .active{
-    background-color: #9da3d7;
+    background-color: #9da3d7 !important;
+}
+.control__element{
+    background-color: transparent;
     width: 21px;
     height: 21px;
     border-radius: 50%;
@@ -175,13 +199,262 @@ h1{
     margin-top: 60px;
     margin-left: 15px;
     text-align: center;
-    font-size: 23px;
+    font-size: 25px;
+    font-family: "MyriadProSemiBold";
 }
 
 .text-block__content__text{
     margin-top: 32px;
     margin-left: 9px;
-    font-size: 15px;
+    font-size: 14px;
     text-align: justify;
     line-height: 16px;
+    font-family: "MyriadProRegular";
+}
+
+.calc-block__wrapper{
+    width: 100%;
+    height: 917px;
+}
+.calc-block__content{
+    margin: auto;
+    width: 965px;
+}
+
+.calc-block__type__title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    margin-top: 64px;
+    font-size: 25px;
+    color: rgba(157, 163, 215, 255);
+    line-height: 30px;
+    font-family: "MyriadProSemiBold";
+}
+
+.calc-block__type__content{
+    display: flex;
+    margin-top: 32px;
+    justify-content: space-between;
+    text-decoration: blanchedalmond;
+    font-family: "MyriadProBold";
+}
+
+.calc-block__type__content__window{
+    height: 177px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calc-block__type__content__window>span{
+    cursor: pointer;
+}
+
+.active_window{
+    color: rgba(0, 153, 222, 255);
+    text-decoration: underline;
+}
+
+.calc-block__calc{
+    margin-top: 35px;
+    margin-left: 7px;
+}
+
+.calc-block__calc__data{
+    display:flex;
+    width: 965px;
+    height: 513px;
+    border-radius: 10px;
+    border: 1px solid #eaeaea;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+}
+
+.calc-block__calc__data__size{
+    margin-right: 100px;
+    width: 300px;
+    height: 360px;
+
+}
+
+.calc-block__calc__data__param__title{
+    margin-top: 56px;
+    color: rgba(0, 153, 222, 255);
+    font-size: 32px;
+    font-family: "MyriadProBold";
+}
+
+.calc-block__calc__data__param__first{
+    margin-left: 5px;
+    margin-top: 50px;
+}
+
+.param-title{
+    font-size: 25px;
+    font-family: "MyriadProSemiBold";
+}
+
+.calc-block__calc__data__param__first__radio{
+    margin-top: 25px;
+}
+.calc-block__calc__data__param__first__radio>label{
+    font-size: 19px;
+    margin-right: 25px;
+    font-family: "MyriadProRegular";
+}
+
+.calc-block__calc__data__param__second__select{
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    margin-left: 8px;
+}
+
+.calc-block__calc__data__param__second__select>select{
+    margin-top: 20px;
+    width: 358px;
+    height: 45px;
+    border-radius: 10px;
+    padding-left: 20px;
+    font-size: 18px;
+    font-family: "MyriadProRegular";
+}
+.calc-block__calc__data__param__button>form{
+    justify-content: space-between;
+    display: flex;
+    margin-top: 60px;
+    width: 392px;
+
+}
+
+.calc-block__calc__data__param__button__button{
+    width: 280px;
+    height: 46px;
+    background-color: #9da3d7;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.calc-block__calc__data__param__button-tel{
+    display: flex;
+    margin-left: -190px;
+    background-color: #c6c6c6;
+    border: 1px solid #c6c6c6;
+    border-radius: 10px;
+    width: 280px;
+    height: 46px;
+}
+
+.calc-block__calc__data__param__button-tel>div{
+    display: flex;
+    width: 56px;
+    height: 46px;
+    background: #ffffff;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-family: "MyriadProRegular";
+}
+.calc-block__calc__data__param__button-tel>input{
+    background-color: transparent;
+    border: none;
+    color: rgba(66, 66, 66, 255);
+    padding-left: 18px;
+    font-size: 18px;
+    width: 100%;
+    font-family: "MyriadProRegular";
+}
+
+.calc-block__calc__data__size{
+    position: relative;
+}
+.calc-block__calc__data__size__width{
+    position: absolute;
+    left: 127px;
+    top: 32px;
+    color: rgba(99, 99, 99, 255);
+    font-size: 22px;
+    font-family: "MyriadProSemiBoldItalic";
+}
+
+.calc-block__calc__data__size__height{
+    font-family: "MyriadProSemiBoldItalic";
+    transform: rotate(-90deg);
+    position: absolute;
+    color: rgba(99, 99, 99, 255);
+    left: -10px;
+    top: 158px;
+    font-size: 22px;
+}
+
+.calc-block__calc__data__size__preview{
+    position: absolute;
+    left: 110px;
+    top: 82px;
+}
+
+.calc-block__calc__data__size__preview>img{
+    height: 164px;
+
+}
+.calc-block__calc__data__size__inputs{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 280px;    
+    margin-left: 35px;
+    border: none;
+}
+.calc-block__calc__data__size__inputs>label{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100px;
+    height: 75px;
+    font-family: "MyriadProRegular";
+}
+.calc-block__calc__data__size__inputs>label>div{
+    font-size: 20px;
+}
+
+.calc-block__calc__data__size__inputs>label>input{
+    width: 68px;
+    height: 39px;
+    border-radius: 10px;
+    padding-left: 17px;
+    border-radius: 10px;
+    font-size: 32px;
+}
+.calc-block__calc__data__size__X{
+    position: absolute;
+    bottom: 11px;
+    left: 150px;
+}
+
+footer{
+    width: 100%;
+    background-color: #777777;
+    height: 148px;
+}
+footer>div{
+    margin-top: 20px;
+    width: 961px;
+    margin: 0 auto;
+    color: rgba(255, 254, 254, 255);
+    font-size: 25px;
+    padding-top: 46px;
+    line-height: 30px;
+    font-family: "MyriadProRegular";
+}
+
+@media(max-width: 740px){
+    .slider__wrapper{
+        display: none;
+    }
 }
